@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Namish Sanjel - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Home Section -->
+  <section id="home" class="home">
+    <div class="content">
+      <h1>Namish Sanjel</h1>
+      <p>Full-stack Developer | Programmer | Teacher</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about" class="about">
+    <div class="content">
+      <img src="444501755_2225639757795063_7268028639163702351_n.jpg" alt="Your Image" class="profile-image" />
+      <div class="text">
+        <h2>About Me</h2>
+        <p>I am a developer with a strong grasp of programming languages like C, C++, C#, Java, and Python. I also have a good knowledge of full-stack development.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">C</div>
+      <div class="skill-card">C++</div>
+      <div class="skill-card">C#</div>
+      <div class="skill-card">Java</div>
+      <div class="skill-card">Python</div>
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">HTML</div>
+      <div class="skill-card">CSS</div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+
+    <div class="project-card">
+      <h3>Jaldimai.com</h3>
+      <p>A food delivery company based in Damak.</p>
+      <a href="https://www.jaldimai.com" class="btn">Live Demo</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Loveevertag</h3>
+      <p>A memorial service based in the USA.</p>
+      <a href="https://loveevertag.com/" class="btn">Live Demo</a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Get in Touch</h2>
+    <p>Email: <a href="mailto:Namishsanjel7@gmail.com">Namishsanjel7@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/Namishsanjel">github.com/Namishsanjel</a></p>
+  </section>
+
+  <!-- JavaScript for Scroll Animations -->
+  <script>
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll("h1, h2, h3, p, .btn, .skill-card, .project-card, .profile-image").forEach((element) => {
+              element.classList.add("visible");
+            });
+          } else {
+            entry.target.querySelectorAll("h1, h2, h3, p, .btn, .skill-card, .project-card, .profile-image").forEach((element) => {
+              element.classList.remove("visible");
+            });
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+        rootMargin: "0px 0px -100px 0px",
+      }
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
